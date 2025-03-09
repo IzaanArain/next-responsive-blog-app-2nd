@@ -33,48 +33,54 @@ export const posts = [
         title: "Top 5 Exercises for a Healthy Lifestyle",
         date: "20.11.20"
     },
-    // {
-    //     image: "/p1.jpeg",
-    //     category: "Coding",
-    //     color: "#775aec",
-    //     username: "Sophia Lee",
-    //     title: "The Future of AI: What to Expect in the Next Decade",
-    //     date: "15.09.23"
-    // },
-    // {
-    //     image: "/p1.jpeg",
-    //     category: "Style",
-    //     color: "#789cff",
-    //     username: "Emma Wilson",
-    //     title: "The Latest Trends in 2024 Fashion",
-    //     date: "03.02.24"
-    // }
+    {
+        image: "/p1.jpeg",
+        category: "Coding",
+        color: "#775aec",
+        username: "Sophia Lee",
+        title: "The Future of AI: What to Expect in the Next Decade",
+        date: "15.09.23"
+    },
+    {
+        image: "/p1.jpeg",
+        category: "Style",
+        color: "#789cff",
+        username: "Emma Wilson",
+        title: "The Latest Trends in 2024 Fashion",
+        date: "03.02.24"
+    }
 ];
 
 export const categories = [
     {
         name: "Travel",
         color: "#ff7857",
+        image: "/travel.png"
     },
     {
         name: "Culture",
         color: "#ffb14f",
+        image: "/culture.png"
     },
     {
         name: "Food",
         color: "#7fb881",
+        image: "/food.png"
     },
     {
         name: "Coding",
         color: "#775aec",
+        image: "/coding.png"
     },
     {
         name: "Fashion",
         color: "#ff7887",
+        image: "/fashion.png"
     },
     {
         name: "Style",
         color: "#789cff",
+        image: "/style.png"
     }
 ]
 

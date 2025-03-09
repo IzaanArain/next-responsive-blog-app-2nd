@@ -7,7 +7,7 @@ const MenuPosts = ({ withImage }) => {
     return (
         <div className={styles.items}>
             {
-                posts.map((post, index) => (
+                posts.slice(0, 4).map((post, index) => (
                     <Link href={"/"} className={styles.item} key={index}>
                         {
                             withImage && (
