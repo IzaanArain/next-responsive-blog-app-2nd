@@ -82,6 +82,39 @@ export const categories = [
         color: "#789cff",
         image: "/style.png"
     }
-]
+];
+
+export const COMMENTS = [
+    {
+        username: "John Doe",
+        image: "/p1.jpeg",
+        date: "01.01.2025",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Suspendisse potenti. Proin vel nulla at dui cursus gravida. Integer vulputate mauris sed libero fermentum, eu posuere nisi vehicula."
+    },
+    {
+        username: "Jane Smith",
+        image: "/p1.jpeg",
+        date: "01.01.2025",
+        comment: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        username: "Alice Johnson",
+        image: "/p1.jpeg",
+        date: "01.01.2025",
+        comment: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    },
+    {
+        username: "Bob Brown",
+        image: "/p1.jpeg",
+        date: "01.01.2025",
+        comment: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident."
+    },
+    {
+        username: "Charlie Davis",
+        image: "/p1.jpeg",
+        date: "01.01.2025",
+        comment: "Temporibus autem quibusdam et aut officiis debitis rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores."
+    }
+];
 
 
