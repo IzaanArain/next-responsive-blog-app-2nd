@@ -7,7 +7,7 @@ import { useState } from "react";
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
   // ? temporary
-  const status = "unauthenticated";
+  const status = "authenticated";
   return (
     <>
       {
