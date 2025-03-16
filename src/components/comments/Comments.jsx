@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './comments.module.css'
 import Link from 'next/link';
-import { COMMENTS } from '@/constants/constants';
+import { COMMENTS } from '@/constants';
 
 const Comments = () => {
     const status = "authenticated"

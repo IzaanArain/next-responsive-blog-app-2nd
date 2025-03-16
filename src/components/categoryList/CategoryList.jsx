@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./categoryList.module.css";
 import Image from "next/image";
-import { categories } from "@/constants/constants";
+import { categories } from "@/constants";
 
 const CategoryList = () => {
   return (

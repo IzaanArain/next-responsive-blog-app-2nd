@@ -1,7 +1,7 @@
 import styles from './menuPosts.module.css'
 import Link from "next/link";
 import Image from "next/image";
-import { posts } from "@/constants/constants";
+import { posts } from "@/constants";
 
 const MenuPosts = ({ withImage }) => {
     return (

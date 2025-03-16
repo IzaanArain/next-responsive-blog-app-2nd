@@ -1,5 +1,5 @@
 import styles from './menuCategories.module.css'
-import { categories } from "@/constants/constants";
+import { categories } from "@/constants";
 import Link from "next/link";
 
 const MenuCategories = () => {
