@@ -41,7 +41,6 @@
     border: none;
     outline: none;
     background-color: transparent;
-    color: white;
 }
 
 .input::placeholder {
