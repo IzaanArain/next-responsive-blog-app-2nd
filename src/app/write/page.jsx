@@ -2,17 +2,33 @@
 
 import Image from 'next/image'
 import styles from './write.module.css'
-import { useState, } from 'react';
+import { useEffect, useState, } from 'react';
 import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.bubble.css';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const Write = () => {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(false)
 
+    const { status } = useSession()
+
+    const router = useRouter();
+
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/");
+        }
+    }, [status, router]);
+
+    if (status === "loading") {
+        return <div className={styles.loading}>Loading...</div>
+    }
+
     return (
         <div className={styles.container}>
-            <input type="text" placeholder='Title' className={styles.input}/>
+            <input type="text" placeholder='Title' className={styles.input} />
             <div className={styles.editor}>
                 <button className={styles.button} onClick={() => setOpen(!open)}>
                     <Image src={`/plus.png`} alt='' width={16} height={16} />
