@@ -1,5 +1,4 @@
 
-
 export const posts = [
     {
         image: "/p1.jpeg",
