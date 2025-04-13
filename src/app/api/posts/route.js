@@ -1,4 +1,5 @@
 import prisma from "@/lib/prisma";
+import { getAuthSession } from "@/utils/auth";
 import { NextResponse } from "next/server"
 
 export const GET = async (req) => {
@@ -37,26 +38,52 @@ export const GET = async (req) => {
     }
 }
 
-// generating post data // alternative to prisma studio 
-export async function POST(req) {
+// GET A POST COMMENT
+export const POST = async (req) => {
+    const session = await getAuthSession();
+    if (!session) {
+        return new NextResponse(
+            JSON.stringify({ message: "Not Authenticated" }, { status: 401 }),
+        );
+    }
     try {
-        const body = await req.json(); // Parse request body
-
-        const newPost = await prisma.post.create({
-            data: {
-                title: body.title,
-                slug: body.slug,
-                desc: body.desc,
-                img: body.img,
-                views: 0,
-                catSlug: body.catSlug,
-                userEmail: body.userEmail,
-            },
-        });
-
-        return new Response(JSON.stringify(newPost), { status: 201 });
+        const body = await req.json();
+        const post = await prisma.post.create({
+            data: { ...body, userEmail: session.user.email },
+        })
+        return new NextResponse(JSON.stringify(
+            post,
+            { status: 201 }
+        ));
     } catch (error) {
-        console.error("Error creating post:", error);
-        return new Response(JSON.stringify({ error: "Something went wrong" }), { status: 500 });
+        console.error(error)
+        return new NextResponse(JSON.stringify(
+            { message: "Something went wrong!" },
+            { status: 500 }
+        ));
     }
 }
+
+// generating post data // alternative to prisma studio 
+// export async function POST(req) {
+//     try {
+//         const body = await req.json(); // Parse request body
+
+//         const newPost = await prisma.post.create({
+//             data: {
+//                 title: body.title,
+//                 slug: body.slug,
+//                 desc: body.desc,
+//                 img: body.img,
+//                 views: 0,
+//                 catSlug: body.catSlug,
+//                 userEmail: body.userEmail,
+//             },
+//         });
+
+//         return new Response(JSON.stringify(newPost), { status: 201 });
+//     } catch (error) {
+//         console.error("Error creating post:", error);
+//         return new Response(JSON.stringify({ error: "Something went wrong" }), { status: 500 });
+//     }
+// }

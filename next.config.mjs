@@ -5,7 +5,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol:"https",
-                hostname: "**",// for all hosts // googleusercontent.com
+                hostname: "**",// allows images from any secure host
             }
         ]
     }
