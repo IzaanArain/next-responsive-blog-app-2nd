@@ -25,7 +25,7 @@ const CategoryList = async () => {
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
         {
-          data?.map((cat, index) => (
+          data?.map((cat) => (
             <Link
               key={cat.id}
               href={`/blog?cat=${cat.slug.toLowerCase()}`}

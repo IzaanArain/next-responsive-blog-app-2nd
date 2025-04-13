@@ -5,19 +5,19 @@ import Link from "next/link";
 const Card = ({key, item}) => {
     return (
         <div className={styles.container} key={key} >
-            <div className={styles.imgContainer}>
-                <Image src={"/p1.jpeg"} alt="" fill className={styles.image} />
-            </div>
+            {item.img && (<div className={styles.imgContainer}>
+                <Image src={item.img} alt="" fill className={styles.image} />
+            </div>)}
             <div className={styles.textContainer}>
                 <div className={styles.detail}>
-                    <time className={styles.date}>11.02.2023 - </time>
+                    <time className={styles.date}>{item.createdAt.substring(0,10)} - </time>
                     <span className={styles.category}>{item.catSlug}</span>
                 </div>
-                <Link href={"/"}>
+                <Link href={`/post/${item.slug}`}>
                     <h1>{item.title}</h1>
                 </Link>
-                <p className={styles.desc}>{item.desc}</p>
-                <Link href={"/"} className={styles.link}>Read More</Link>
+                <p className={styles.desc}>{item.desc.substring(0,60)}</p>
+                <Link href={`/post/${item.slug}`} className={styles.link}>Read More</Link>
             </div>
         </div>
     )
